@@ -142,7 +142,7 @@ document.getElementById('nav-history-btn').addEventListener('click', function(){
 
 document.getElementById('blog-btn').addEventListener('click', function(){
 
-  window.location.href = "./accordion/accordion.html";
+  window.location.href = "./accordion/blog.html";
 
 })
 
