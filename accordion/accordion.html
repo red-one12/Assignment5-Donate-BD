@@ -12,8 +12,8 @@
 <body>
   <header class="sticky top-0">
     <div class="nav-item div w-full bg-[#F9F7F3] flex flex-col justify-center items-center">
-      <nav class="max-w-6xl w-full flex justify-between items-center p-10">
-        <button class="btn bg-[#B4F461] pl-8 pr-8 text-lg font-bold">Blog</button>
+      <nav class="max-w-7xl w-full flex justify-between items-center p-8">
+        <button id="home-btn" class="btn bg-[#B4F461] pl-8 pr-8 text-lg font-bold">Home</button>
         <div class="logo flex justify-center items-center gap-4">
           <img src="../assets/logo.png" alt="logo">
           <h1 class="hidden md:block text-lg font-bold">Donate Bangladesh</h1>
@@ -29,9 +29,9 @@
 
   <main class="w-full flex flex-col justify-center items-center mt-8">
 
-    <h1 class="max-w-6xl w-full text-3xl md:text-5xl font-bold">Important FAQ</h1>
+    <h1 class="max-w-7xl w-full text-3xl md:text-5xl font-bold p-8">Important FAQ</h1>
 
-    <div class="all-accordion max-w-6xl w-full mt-8">
+    <div class="all-accordion max-w-7xl w-full mt-8 p-8">
 
       <div class="join join-vertical w-full">
         <div class="collapse collapse-arrow join-item border-base-300 border">
@@ -69,5 +69,18 @@
     </div>
 
   </main>
+  <script src="../stringToNumber.js"></script>
+  <script>
+
+document.getElementById('home-btn').addEventListener('click', function(){
+
+console.log('clicked home');
+
+
+window.location.href = "../index.html";
+
+})
+
+  </script>
 </body>
 </html>

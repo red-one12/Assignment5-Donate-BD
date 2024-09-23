@@ -120,6 +120,7 @@ document.getElementById('nav-donate-btn').addEventListener('click', function(){
 
 
 
+
 document.getElementById('nav-history-btn').addEventListener('click', function(){
 
   const donateCardsDiv = document.getElementById('donate-cards-div');
@@ -135,4 +136,15 @@ document.getElementById('nav-history-btn').addEventListener('click', function(){
   allHistoryPage.classList.remove('hidden');
 
 })
+
+
+
+
+document.getElementById('blog-btn').addEventListener('click', function(){
+
+  window.location.href = "./accordion/accordion.html";
+
+})
+
+
 
