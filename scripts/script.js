@@ -16,6 +16,10 @@ for(let i = 0; i<allDonateNowBtn.length; i++){
 
     const currentDonationBalanceID = parseFloat(parentElement.children[0].children[1].innerHTML);
 
+    const forDonation = parentElement.children[1].innerText;
+
+    
+
     const inputValueInNumber = stringToNumber(getInputElementID);
 
     // console.log(inputValueInNumber);
@@ -46,8 +50,29 @@ for(let i = 0; i<allDonateNowBtn.length; i++){
 
         parentElement.children[0].children[1].innerHTML = newLocationBalance;
 
+
         document.getElementById(getInputElementID).value = '';
         modal.showModal();
+
+        let historyCardsDiv = document.getElementById('history-cards-div');
+
+        
+        
+        const currentTime = new Date();
+        console.log(currentTime);
+        
+        const newCard = document.createElement('div');
+        const historyCard  = `
+          <div class="each-history-card w-full border border-gray-200 rounded-lg p-4 flex flex-col gap-3">
+          <h1 class="font-bold text-lg">${inputValueInNumber} Taka is ${forDonation}</h1>
+          <p class="text-gray-500 text-sm">Date: ${currentTime}</p>
+          </div>
+        `;
+
+        newCard.innerHTML = historyCard;
+        historyCardsDiv.insertBefore(newCard, historyCardsDiv.firstChild);
+
+
       }
       else{
         alert('Insufficient Balance');
@@ -61,4 +86,53 @@ for(let i = 0; i<allDonateNowBtn.length; i++){
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.getElementById('nav-donate-btn').addEventListener('click', function(){
+
+  const donateCardsDiv = document.getElementById('donate-cards-div');
+  const allHistoryDiv = document.getElementById('history-cards-div');
+
+
+  const navDonateBtn = document.getElementById('nav-donate-btn');
+  const navHistoryBtn = document.getElementById('nav-history-btn');
+  navDonateBtn.style.backgroundColor = '#B4F461';
+  navHistoryBtn.style.backgroundColor = '#EDEBE8';
+
+
+
+  donateCardsDiv.classList.remove('hidden');
+  allHistoryDiv.classList.add('hidden');
+
+
+})
+
+
+
+document.getElementById('nav-history-btn').addEventListener('click', function(){
+
+  const donateCardsDiv = document.getElementById('donate-cards-div');
+  const allHistoryPage = document.getElementById('history-cards-div');
+
+
+  const navDonateBtn = document.getElementById('nav-donate-btn');
+  const navHistoryBtn = document.getElementById('nav-history-btn');
+  navDonateBtn.style.backgroundColor = '#EDEBE8';
+  navHistoryBtn.style.backgroundColor = '#B4F461';
+
+  donateCardsDiv.classList.add('hidden');
+  allHistoryPage.classList.remove('hidden');
+
+})
 

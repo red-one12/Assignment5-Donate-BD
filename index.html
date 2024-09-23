@@ -28,15 +28,19 @@
         </div>
       </nav>
       <div class="donation-history flex justify-center gap-4 pt-8 pb-5 bg-[rgba(255,255,255,0)] w-full backdrop-blur-xl">
-        <button class="btn bg-[#B4F461] pl-8 pr-8 font-bold">Donate</button>
-        <button class="btn  pl-8 pr-8 font-bold">History</button>
+        <button id="nav-donate-btn" class="btn bg-[#B4F461] pl-8 pr-8 font-bold">Donate</button>
+        <button id="nav-history-btn" class="btn  pl-8 pr-8 font-bold">History</button>
       </div>
     </div>
   </header>
 
   <main class="w-full flex flex-col justify-center items-center">
+
+
+
+
     
-    <div class="cards max-w-7xl m-10 flex flex-col gap-5">
+    <div id="donate-cards-div" class="cards max-w-7xl m-10">
 
       <div class="each-card p-5 flex flex-col md:flex-row  justify-center items-center bg-[#F9F7F3] rounded-2xl gap-8">
         <div class="left w-full md:w-1/2">
@@ -207,25 +211,23 @@
 
     </div>
 
-    <div class="hidden history-cards max-w-7xl w-full mt-10">
-
-      <div class="each-history-card w-full border border-gray-200 rounded-lg p-4 flex flex-col gap-3">
-        <h1 class="font-bold text-lg">400 Taka is Donated for Famine-2024 at Feni, Bangladesh</h1>
-        <p class="text-gray-500 text-sm">Date: Tue Sep 17 2024 08:39:11 GMT +0600 (Bangladesh Standard Time)</p>
-      </div>
-
-      <div class="each-history-card w-full border border-gray-200 rounded-lg p-4 flex flex-col gap-3">
-        <h1 class="font-bold text-lg">400 Taka is Donated for Famine-2024 at Feni, Bangladesh</h1>
-        <p class="text-gray-500 text-sm">Date: Tue Sep 17 2024 08:39:11 GMT +0600 (Bangladesh Standard Time)</p>
-      </div>
 
 
-      <div class="each-history-card w-full border border-gray-200 rounded-lg p-4 flex flex-col gap-3">
-        <h1 class="font-bold text-lg">400 Taka is Donated for Famine-2024 at Feni, Bangladesh</h1>
-        <p class="text-gray-500 text-sm">Date: Tue Sep 17 2024 08:39:11 GMT +0600 (Bangladesh Standard Time)</p>
-      </div>
 
+
+
+
+
+
+
+    <div id="history-cards-div" class="hidden history-cards max-w-7xl w-full mt-10 flex flex-col gap-4">
+
+      
     </div>
+
+
+
+
 
   </main>
   <footer class="mt-10">
