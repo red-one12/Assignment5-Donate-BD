@@ -2,12 +2,12 @@ function stringToNumber(id){
 
   const number = document.getElementById(id).value;
 
-  if(isNaN(number) || parseFloat(number)<0){
+  if(isNaN(number) || parseFloat(number)<0 || number === ''){
     return false;
   }
 
   else{
-    return true;
+    return parseFloat(number);
   }
 
 }

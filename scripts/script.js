@@ -1,4 +1,3 @@
-const navBalance = stringToNumberForText('nav-money');
 
 
 
@@ -15,13 +14,19 @@ for(let i = 0; i<allDonateNowBtn.length; i++){
     
     const getInputElementID = parentElement.children[3].id;
 
+    const currentDonationBalanceID = parseFloat(parentElement.children[0].children[1].innerHTML);
+
     const inputValueInNumber = stringToNumber(getInputElementID);
-    console.log(inputValueInNumber);
+
+    // console.log(inputValueInNumber);
+    
 
 
     
 
     const modal = document.getElementById('my_modal_5');
+    const navBalance = stringToNumberForText('nav-money');
+
 
     if(inputValueInNumber === false){
       document.getElementById(getInputElementID).value = '';
@@ -30,9 +35,24 @@ for(let i = 0; i<allDonateNowBtn.length; i++){
     }
 
     else{
-      console.log('good money');
-      document.getElementById(getInputElementID).value = '';
-      modal.showModal();
+      if(navBalance >= inputValueInNumber){
+        console.log('good money');
+
+
+        const newNavBalance = navBalance - inputValueInNumber;
+        document.getElementById('nav-money').innerText = newNavBalance;
+
+        const newLocationBalance = currentDonationBalanceID + inputValueInNumber;
+
+        parentElement.children[0].children[1].innerHTML = newLocationBalance;
+
+        document.getElementById(getInputElementID).value = '';
+        modal.showModal();
+      }
+      else{
+        alert('Insufficient Balance');
+        document.getElementById(getInputElementID).value = '';
+      }
     }
     
     
@@ -42,15 +62,3 @@ for(let i = 0; i<allDonateNowBtn.length; i++){
 }
 
 
-
-
-// document.getElementById('donate-btn-one').addEventListener('click', function(){
-
-//   const inputOne = stringToNumber('input-donate-1');
-  
-//   if(inputOne < 0 || typeof inputOne !== "number"){
-//     alert('invalid input');
-//     return;
-//   }
-
-// })
